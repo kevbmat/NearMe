@@ -12,6 +12,7 @@ import CoreLocation
 class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var places = [Place]()
+    @IBOutlet var searchBar: UISearchBar!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -28,8 +29,6 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    
-    @IBOutlet var searchBar: UISearchBar!
     let apiKey: String = "AIzaSyBnyJwxj9eSbZKAUCW_6l1W3HYf8p5azXk"
 
     override func viewDidLoad() {

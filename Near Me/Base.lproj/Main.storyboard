@@ -33,6 +33,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="pWw-vx-Tr6" kind="show" identifier="DetailSegue" id="hYc-4V-aXB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -58,6 +61,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Place Detail View Controller-->
+        <scene sceneID="wcD-EF-JPg">
+            <objects>
+                <viewController id="pWw-vx-Tr6" customClass="PlaceDetailViewController" customModule="Near_Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SbH-QG-7a4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoN-Km-pBZ">
+                                <rect key="frame" x="16" y="80" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-JK-Dp9">
+                                <rect key="frame" x="16" y="117" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tBT-Eh-dWG">
+                                <rect key="frame" x="16" y="468" width="343" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tBT-Eh-dWG" secondAttribute="height" multiplier="15:8" id="CdD-0l-o4h"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="cBj-JK-Dp9" secondAttribute="trailing" constant="16" id="1NM-Qg-WB0"/>
+                            <constraint firstItem="LFo-5H-857" firstAttribute="bottom" secondItem="tBT-Eh-dWG" secondAttribute="bottom" constant="16" id="2TJ-kc-sMT"/>
+                            <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="YoN-Km-pBZ" secondAttribute="trailing" constant="16" id="Eee-tz-RKi"/>
+                            <constraint firstItem="tBT-Eh-dWG" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="K5U-y7-9Ey"/>
+                            <constraint firstItem="cBj-JK-Dp9" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="Kal-Ah-Zci"/>
+                            <constraint firstItem="cBj-JK-Dp9" firstAttribute="top" secondItem="YoN-Km-pBZ" secondAttribute="bottom" constant="16" id="cDb-XQ-aMX"/>
+                            <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="tBT-Eh-dWG" secondAttribute="trailing" constant="16" id="hSv-1I-a6q"/>
+                            <constraint firstItem="YoN-Km-pBZ" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="wag-xg-8gL"/>
+                            <constraint firstItem="YoN-Km-pBZ" firstAttribute="top" secondItem="LFo-5H-857" secondAttribute="top" constant="16" id="z7e-o6-1jK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LFo-5H-857"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bDt-UT-UeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X7Z-5V-IaL">
