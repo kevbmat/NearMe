@@ -28,8 +28,6 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
         // cell.showsReorderControl = true
         return cell
     }
-    
-    let apiKey: String = "AIzaSyBnyJwxj9eSbZKAUCW_6l1W3HYf8p5azXk"
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,6 +15,7 @@
 		36FF6EBD21AB7088006135B6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF6EBC21AB7088006135B6 /* Place.swift */; };
 		36FF6EBF21AB72D9006135B6 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF6EBE21AB72D9006135B6 /* PlaceDetailViewController.swift */; };
 		36FF6EC121ABBA83006135B6 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF6EC021ABBA83006135B6 /* PlaceTableViewCell.swift */; };
+		36FF6EC321ACED7E006135B6 /* PlaceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF6EC221ACED7E006135B6 /* PlaceAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		36FF6EBC21AB7088006135B6 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		36FF6EBE21AB72D9006135B6 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		36FF6EC021ABBA83006135B6 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		36FF6EC221ACED7E006135B6 /* PlaceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				36FF6EAC21AB6DEB006135B6 /* PlaceTableViewController.swift */,
 				36FF6EC021ABBA83006135B6 /* PlaceTableViewCell.swift */,
 				36FF6EBE21AB72D9006135B6 /* PlaceDetailViewController.swift */,
+				36FF6EC221ACED7E006135B6 /* PlaceAPI.swift */,
 				36FF6EBC21AB7088006135B6 /* Place.swift */,
 				36FF6EAE21AB6DEB006135B6 /* Main.storyboard */,
 				36FF6EB121AB6DED006135B6 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			files = (
 				36FF6EBD21AB7088006135B6 /* Place.swift in Sources */,
 				36FF6EBF21AB72D9006135B6 /* PlaceDetailViewController.swift in Sources */,
+				36FF6EC321ACED7E006135B6 /* PlaceAPI.swift in Sources */,
 				36FF6EAD21AB6DEB006135B6 /* PlaceTableViewController.swift in Sources */,
 				36FF6EAB21AB6DEB006135B6 /* AppDelegate.swift in Sources */,
 				36FF6EC121ABBA83006135B6 /* PlaceTableViewCell.swift in Sources */,
