@@ -37,7 +37,6 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBAction func searchPressed(_ sender: UIBarButtonItem) {
         
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
