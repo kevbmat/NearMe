@@ -52,4 +52,13 @@ struct PlaceAPI {
         task.resume()
     }
     
+    static func places(fromData data: Data) -> [Place]? {
+        do {
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            print(jsonObject)
+        } catch {
+            print("error getting JSON")
+        }
+        return nil
+    }
 }

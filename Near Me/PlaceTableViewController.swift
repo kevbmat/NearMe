@@ -32,7 +32,8 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func updatePressed(_ sender: UIBarButtonItem) {
-        
+        PlaceAPI.fetchPlaces(location: (latitude: 45, longitude: -117), completion: {_ in })
+        print("stuff")
     }
     
     @IBAction func searchPressed(_ sender: UIBarButtonItem) {
