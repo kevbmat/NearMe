@@ -46,7 +46,7 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
             print("Location services enabled")
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
-            locationManager.requestLocation()
+            locationManager.startUpdatingLocation()
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         } else {
             // the user turned off location, phone is in airplane mode, lack of hardware, hardware failure,...

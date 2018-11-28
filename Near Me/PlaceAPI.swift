@@ -12,11 +12,11 @@ struct PlaceAPI {
     static let apiKey: String = "AIzaSyDJgGQcEca-T1jl0dtxcqPLgkZTi_MAEtQ"
     static let baseURL: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/"
     
-    static func placeURL() -> URL {
+    static func placeURL(location: (latitude: Double, longitude: Double)) -> URL {
         // first lets define our query parameters
-        let params: [String: Any] = [
+        let params: [String: String] = [
             "key": PlaceAPI.apiKey,
-            "location": "sample",
+            "location": "\(location.latitude),\(location.longitude)",
             "radius": "500"
         ]
         
@@ -30,6 +30,26 @@ struct PlaceAPI {
         let url = components.url!
         print(url)
         return url
+    }
+    
+    static func fetchPlaces(location: (latitude: Double, longitude: Double), completion: @escaping ([Place]?) -> Void) {
+        let url = placeURL(location: location)
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data, let dataString = String(data: data, encoding: .utf8), let places = places(fromData: data) {
+                print("success")
+                DispatchQueue.main.async {
+                    completion(places)
+                }
+            } else {
+                if let error = error {
+                    print("error")
+                }
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }
+        task.resume()
     }
     
 }
