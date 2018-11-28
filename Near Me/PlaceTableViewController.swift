@@ -14,6 +14,7 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
     var places = [Place]()
     let locationManager = CLLocationManager()
     @IBOutlet var searchBar: UISearchBar!
+    var location: (latitude: Double, longitude: Double) = (45.0, 177.0)
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -51,6 +52,11 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
             // the user turned off location, phone is in airplane mode, lack of hardware, hardware failure,...
             print("Location services disabled")
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location.latitude = locations[0].coordinate.latitude
+        location.longitude = locations[0].coordinate.longitude
     }
 
 
