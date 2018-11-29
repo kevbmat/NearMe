@@ -10,14 +10,14 @@ import Foundation
 
 struct PlaceAPI {
     static let apiKey: String = "AIzaSyDJgGQcEca-T1jl0dtxcqPLgkZTi_MAEtQ"
-    static let baseURL: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/"
+    static let baseURL: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
     
     static func placeURL(location: (latitude: Double, longitude: Double)) -> URL {
         // first lets define our query parameters
         let params: [String: String] = [
             "key": PlaceAPI.apiKey,
             "location": "\(location.latitude),\(location.longitude)",
-            "radius": "500"
+            "radius": "5000"
         ]
         
         // now we need to get the params into a url with the base url
@@ -56,6 +56,11 @@ struct PlaceAPI {
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
             print(jsonObject)
+            guard let jsonDictionary = jsonObject as? [String: Any], let placeObject = jsonDictionary["results"] as? [[String: Any]] else {
+                print("Error parsing JSON")
+                return nil
+            }
+            
         } catch {
             print("error getting JSON")
         }
