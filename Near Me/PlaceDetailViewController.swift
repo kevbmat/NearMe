@@ -10,6 +10,14 @@ import UIKit
 
 class PlaceDetailViewController: UIViewController {
 
+    var place: Place? = nil
+    
+    @IBOutlet var nameAndOpenLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var phoneNumberLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var placeImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

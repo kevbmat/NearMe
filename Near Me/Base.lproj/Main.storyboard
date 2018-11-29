@@ -108,15 +108,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoN-Km-pBZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name and isOpen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoN-Km-pBZ">
                                 <rect key="frame" x="16" y="80" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-JK-Dp9">
-                                <rect key="frame" x="16" y="117" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-JK-Dp9">
+                                <rect key="frame" x="16" y="117" width="343" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKD-R9-qk0">
+                                <rect key="frame" x="16" y="149" width="343" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -126,21 +132,40 @@
                                     <constraint firstAttribute="width" secondItem="tBT-Eh-dWG" secondAttribute="height" multiplier="15:8" id="CdD-0l-o4h"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyg-vZ-UDa">
+                                <rect key="frame" x="16" y="181" width="343" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="cBj-JK-Dp9" secondAttribute="trailing" constant="16" id="1NM-Qg-WB0"/>
                             <constraint firstItem="LFo-5H-857" firstAttribute="bottom" secondItem="tBT-Eh-dWG" secondAttribute="bottom" constant="16" id="2TJ-kc-sMT"/>
+                            <constraint firstItem="pyg-vZ-UDa" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="75P-8e-hKP"/>
                             <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="YoN-Km-pBZ" secondAttribute="trailing" constant="16" id="Eee-tz-RKi"/>
+                            <constraint firstItem="xKD-R9-qk0" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="JoS-X7-go7"/>
                             <constraint firstItem="tBT-Eh-dWG" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="K5U-y7-9Ey"/>
                             <constraint firstItem="cBj-JK-Dp9" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="Kal-Ah-Zci"/>
+                            <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="xKD-R9-qk0" secondAttribute="trailing" constant="16" id="MZF-Rl-C3J"/>
+                            <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="pyg-vZ-UDa" secondAttribute="trailing" constant="16" id="YB6-lE-tXo"/>
                             <constraint firstItem="cBj-JK-Dp9" firstAttribute="top" secondItem="YoN-Km-pBZ" secondAttribute="bottom" constant="16" id="cDb-XQ-aMX"/>
+                            <constraint firstItem="pyg-vZ-UDa" firstAttribute="top" secondItem="xKD-R9-qk0" secondAttribute="bottom" constant="16" id="hIt-gU-Xo1"/>
                             <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="tBT-Eh-dWG" secondAttribute="trailing" constant="16" id="hSv-1I-a6q"/>
+                            <constraint firstItem="xKD-R9-qk0" firstAttribute="top" secondItem="cBj-JK-Dp9" secondAttribute="bottom" constant="16" id="otU-TS-Jpr"/>
                             <constraint firstItem="YoN-Km-pBZ" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="wag-xg-8gL"/>
                             <constraint firstItem="YoN-Km-pBZ" firstAttribute="top" secondItem="LFo-5H-857" secondAttribute="top" constant="16" id="z7e-o6-1jK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LFo-5H-857"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="cBj-JK-Dp9" id="jOd-QJ-Xy4"/>
+                        <outlet property="descriptionLabel" destination="pyg-vZ-UDa" id="mPY-HU-YVi"/>
+                        <outlet property="nameAndOpenLabel" destination="YoN-Km-pBZ" id="KBH-Kb-zph"/>
+                        <outlet property="phoneNumberLabel" destination="xKD-R9-qk0" id="bIk-cF-U8b"/>
+                        <outlet property="placeImage" destination="tBT-Eh-dWG" id="POY-5Z-LMS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDt-UT-UeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -34,7 +34,7 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func updatePressed(_ sender: UIBarButtonItem) {
         // TODO: Fill in completion closure
-        PlaceAPI.fetchPlaces(location: (latitude: 47.667189, longitude: -117.4045736), completion: { (placesOptional) in
+        PlaceAPI.fetchPlaces(location: (latitude: location.latitude, longitude: location.longitude), completion: { (placesOptional) in
             if let placesArray = placesOptional {
                 self.places = placesArray
                 print(self.places)
