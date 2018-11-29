@@ -11,6 +11,7 @@ import CoreLocation
 
 class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
+    @IBOutlet var placeTableView: UITableView!
     var places = [Place]()
     let locationManager = CLLocationManager()
     @IBOutlet var searchBar: UISearchBar!
@@ -40,6 +41,7 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         })
         print("update pressed")
+        placeTableView.reloadData()
     }
     
     @IBAction func searchPressed(_ sender: UIBarButtonItem) {

@@ -10,6 +10,9 @@ import UIKit
 
 class PlaceTableViewCell: UITableViewCell {
 
+    @IBOutlet var placeLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +25,8 @@ class PlaceTableViewCell: UITableViewCell {
     }
     
     func update(with place: Place) {
-        
+        placeLabel.text = "\(place.name) (\(place.rating) stars)"
+        addressLabel.text = "\(place.vicinity)"
     }
 
 }

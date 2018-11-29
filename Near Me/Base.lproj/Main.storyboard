@@ -54,6 +54,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addressLabel" destination="FRE-EW-K8b" id="02T-X4-6sH"/>
+                                            <outlet property="placeLabel" destination="mfn-Q8-rOs" id="UGH-Xl-CkL"/>
                                             <segue destination="pWw-vx-Tr6" kind="show" identifier="DetailSegue" id="hYc-4V-aXB"/>
                                         </connections>
                                     </tableViewCell>
@@ -88,6 +90,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="placeTableView" destination="jYI-4R-bB4" id="9bG-xq-OWW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
