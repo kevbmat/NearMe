@@ -33,7 +33,12 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func updatePressed(_ sender: UIBarButtonItem) {
         // TODO: Fill in completion closure
-        PlaceAPI.fetchPlaces(location: (latitude: 47.667189, longitude: -117.4045736), completion: {_ in })
+        PlaceAPI.fetchPlaces(location: (latitude: 47.667189, longitude: -117.4045736), completion: { (placesOptional) in
+            if let placesArray = placesOptional {
+                self.places = placesArray
+                print(self.places)
+            }
+        })
         print("update pressed")
     }
     
@@ -60,7 +65,10 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
         location.latitude = locations[0].coordinate.latitude
         location.longitude = locations[0].coordinate.longitude
     }
-
-
+    
+    // TODO updateTableView
+    func updateUI() {
+        
+    }
 }
 
