@@ -33,25 +33,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="0xV-Cd-b8Q">
-                                                    <rect key="frame" x="40" y="0.0" width="46.5" height="36"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfn-Q8-rOs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="46.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRE-EW-K8b">
-                                                            <rect key="frame" x="0.0" y="21.5" width="46.5" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRE-EW-K8b">
+                                                    <rect key="frame" x="15" y="18" width="313" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfn-Q8-rOs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FRE-EW-K8b" firstAttribute="bottom" secondItem="n1I-2n-11o" secondAttribute="bottomMargin" id="Pc3-WI-N03"/>
+                                                <constraint firstItem="mfn-Q8-rOs" firstAttribute="top" secondItem="n1I-2n-11o" secondAttribute="top" id="QOW-AM-1XF"/>
+                                                <constraint firstItem="FRE-EW-K8b" firstAttribute="trailing" secondItem="n1I-2n-11o" secondAttribute="trailingMargin" id="bKO-tZ-7jv"/>
+                                                <constraint firstItem="mfn-Q8-rOs" firstAttribute="leading" secondItem="n1I-2n-11o" secondAttribute="leading" id="eOt-J7-7Iy"/>
+                                                <constraint firstAttribute="trailing" secondItem="mfn-Q8-rOs" secondAttribute="trailing" id="fcx-5t-Xhd"/>
+                                                <constraint firstItem="FRE-EW-K8b" firstAttribute="leading" secondItem="n1I-2n-11o" secondAttribute="leadingMargin" id="mpH-NH-hMw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addressLabel" destination="FRE-EW-K8b" id="02T-X4-6sH"/>

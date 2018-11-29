@@ -25,7 +25,7 @@ class PlaceTableViewCell: UITableViewCell {
     }
     
     func update(with place: Place) {
-        placeLabel.text = "\(place.name) (\(place.rating) stars)"
+        placeLabel.text = "\(place.name) (\(place.rating) \u{2b50})"
         addressLabel.text = "\(place.vicinity)"
     }
 
