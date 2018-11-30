@@ -1,4 +1,8 @@
 // Kurt Lamon and Kevin Mattappally
+// CPSC 315
+// Programming Assignment #8
+// Kevin Mattappally
+// PlaceTableViewCell.swift
 
 import UIKit
 

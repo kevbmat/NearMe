@@ -1,10 +1,8 @@
-//
-//  PlaceAPI.swift
-//  Near Me
-//
-//  Created by Kevin Mattappally on 11/26/18.
-//  Copyright © 2018 Kevin Mattappally. All rights reserved.
-//
+// Kurt Lamon and Kevin Mattappally
+// CPSC 315
+// Programming Assignment #8
+// Kevin Mattappally
+// PlaceAPI.swift
 
 import Foundation
 import UIKit
