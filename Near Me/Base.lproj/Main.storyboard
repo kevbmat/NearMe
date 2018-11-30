@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="RWN-CU-1t4">
-                                <rect key="frame" x="16" y="80" width="375" height="56"/>
+                                <rect key="frame" x="16" y="80" width="343" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jYI-4R-bB4">
@@ -76,7 +76,7 @@
                             <constraint firstItem="jYI-4R-bB4" firstAttribute="top" secondItem="RWN-CU-1t4" secondAttribute="bottom" constant="16" id="OMP-fV-fjG"/>
                             <constraint firstItem="RWN-CU-1t4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="RO4-aS-J9Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jYI-4R-bB4" secondAttribute="trailing" constant="16" id="TBr-zw-w52"/>
-                            <constraint firstItem="RWN-CU-1t4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="16" id="ofc-i5-qiE"/>
+                            <constraint firstAttribute="trailing" secondItem="RWN-CU-1t4" secondAttribute="trailing" constant="16" id="igx-P5-05B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -94,6 +94,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="placeTableView" destination="jYI-4R-bB4" id="9bG-xq-OWW"/>
+                        <outlet property="searchBar" destination="RWN-CU-1t4" id="7V7-Wb-sOI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

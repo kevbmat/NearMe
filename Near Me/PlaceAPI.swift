@@ -83,9 +83,10 @@ struct PlaceAPI {
         return placeDetail
     }
     
-    static func placeURL(location: (latitude: Double, longitude: Double)) -> URL {
+    static func placeURL(text: String, location: (latitude: Double, longitude: Double)) -> URL {
         // first lets define our query parameters
         let params: [String: String] = [
+            "query": text,
             "key": PlaceAPI.apiKey,
             "location": "\(location.latitude),\(location.longitude)",
             "radius": "5000"
@@ -102,8 +103,8 @@ struct PlaceAPI {
         return url
     }
     
-    static func fetchPlaces(location: (latitude: Double, longitude: Double), completion: @escaping ([Place]?) -> Void) {
-        let url = placeURL(location: location)
+    static func fetchPlaces(text: String, location: (latitude: Double, longitude: Double), completion: @escaping ([Place]?) -> Void) {
+        let url = placeURL(text: text, location: location)
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data, let dataString = String(data: data, encoding: .utf8), let places = places(fromData: data) {
                 DispatchQueue.main.async {

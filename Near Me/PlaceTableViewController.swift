@@ -34,13 +34,17 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func updatePressed(_ sender: UIBarButtonItem) {
         // TODO: Fill in completion closure
-        PlaceAPI.fetchPlaces(location: (latitude: location.latitude, longitude: location.longitude), completion: { (placesOptional) in
-            if let placesArray = placesOptional {
-                self.places = placesArray
-            }
-        })
-        print("update pressed")
-        placeTableView.reloadData()
+        let text: String = searchBar.text!
+        print(text)
+        if text != "" {
+            PlaceAPI.fetchPlaces(text: text, location: (latitude: location.latitude, longitude: location.longitude), completion: { (placesOptional) in
+                if let placesArray = placesOptional {
+                    self.places = placesArray
+                }
+                self.placeTableView.reloadData()
+            })
+            print("update pressed")
+        }
     }
     
     @IBAction func searchPressed(_ sender: UIBarButtonItem) {
