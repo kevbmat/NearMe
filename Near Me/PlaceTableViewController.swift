@@ -37,7 +37,6 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
         PlaceAPI.fetchPlaces(location: (latitude: location.latitude, longitude: location.longitude), completion: { (placesOptional) in
             if let placesArray = placesOptional {
                 self.places = placesArray
-                print(self.places)
             }
         })
         print("update pressed")
@@ -66,6 +65,19 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location.latitude = locations[0].coordinate.latitude
         location.longitude = locations[0].coordinate.longitude
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "DetailSegue" {
+                if let detailVC = segue.destination as? PlaceDetailViewController {
+                    if let indexPath = placeTableView.indexPathForSelectedRow {
+                        let place = places[indexPath.row]
+                        detailVC.place = place
+                    }
+                }
+            }
+        }
     }
     
     // TODO updateTableView

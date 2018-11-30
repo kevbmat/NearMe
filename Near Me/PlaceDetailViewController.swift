@@ -20,7 +20,19 @@ class PlaceDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let validPlace = place {
+            PlaceAPI.fetchDetails(place: validPlace, completion: {(placeDetailOptional) in
+                if let placeDetail = placeDetailOptional {
+                    self.descriptionLabel.text = placeDetail.description
+                    self.phoneNumberLabel.text = placeDetail.phoneNumber
+                } else {
+                    print("sad yeet")
+                }
+            })
+            nameAndOpenLabel.text = validPlace.name
+            addressLabel.text = validPlace.vicinity
+            placeImage.image = UIImage(named: validPlace.photoReference)
+        }
         // Do any additional setup after loading the view.
     }
     
