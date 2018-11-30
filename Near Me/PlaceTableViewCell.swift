@@ -7,8 +7,10 @@
 import UIKit
 
 class PlaceTableViewCell: UITableViewCell {
-
+    
+    // label for the place
     @IBOutlet var placeLabel: UILabel!
+    // label for the address
     @IBOutlet var addressLabel: UILabel!
     
     override func awakeFromNib() {
@@ -22,6 +24,7 @@ class PlaceTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // updates the the cell with the corresponding place name, rating, and vicinity
     func update(with place: Place) {
         placeLabel.text = "\(place.name) (\(place.rating) \u{2b50})"
         addressLabel.text = "\(place.vicinity)"

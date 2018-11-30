@@ -22,8 +22,9 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
         return 0
     }
     
+    // if the search bar button is clicked, then the places are fetched
+    // based on what the user searched
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        // TODO: Fill in completion closure
         let text: String = searchBar.text!
         print(text)
         if text != "" {
@@ -37,6 +38,7 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    // method to reuse a table cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell", for: indexPath) as! PlaceTableViewCell
         let place = places[indexPath.row]
@@ -45,6 +47,8 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    // updates to the current location and gets the places
+    // based on the search keywords
     @IBAction func updatePressed(_ sender: UIBarButtonItem) {
         // TODO: Fill in completion closure
         let text: String = searchBar.text!
@@ -56,12 +60,22 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
                 self.placeTableView.reloadData()
             })
-            print("update pressed")
+            print("search pressed")
         }
     }
     
     @IBAction func searchPressed(_ sender: UIBarButtonItem) {
-        
+        let text: String = searchBar.text!
+        print(text)
+        if text != "" {
+            PlaceAPI.fetchPlaces(text: text, location: (latitude: location.latitude, longitude: location.longitude), completion: { (placesOptional) in
+                if let placesArray = placesOptional {
+                    self.places = placesArray
+                }
+                self.placeTableView.reloadData()
+            })
+            print("update pressed")
+        }
     }
 
     override func viewDidLoad() {
@@ -79,11 +93,13 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    // gets and sets the latitude and longitude
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location.latitude = locations[0].coordinate.latitude
         location.longitude = locations[0].coordinate.longitude
     }
     
+    // prepares to pass the place over to the detail view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "DetailSegue" {

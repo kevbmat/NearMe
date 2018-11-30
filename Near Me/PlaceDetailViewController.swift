@@ -16,6 +16,7 @@ class PlaceDetailViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var placeImage: UIImageView!
     
+    // sets up the images and labels of the detail view
     override func viewDidLoad() {
         super.viewDidLoad()
         if let validPlace = place {

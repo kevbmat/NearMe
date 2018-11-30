@@ -61,7 +61,7 @@ struct PlaceAPI {
                 }
             } else {
                 if let error = error {
-                    print("error details")
+                    print("error details, \(error)")
                 }
                 DispatchQueue.main.async {
                     completion(nil)
@@ -71,22 +71,18 @@ struct PlaceAPI {
         task.resume()
     }
     
-    static func placePhoto() {
-        
-    }
-    
     static func fetchDetails(place: Place, completion: @escaping (PlaceDetail?) -> Void) {
         let id = place.id
         let url = detailURL(id: id)
         // print(url)
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let data = data,let dataString = String(data: data, encoding: .utf8), let placeDetail = placesDetails(fromData: data, placeForDetails: place) {
+            if let data = data,let _ = String(data: data, encoding: .utf8), let placeDetail = placesDetails(fromData: data, placeForDetails: place) {
                 DispatchQueue.main.async {
                     completion(placeDetail)
                 }
             } else {
                 if let error = error {
-                    print("error details")
+                    print("error details, \(error)")
                 }
                 DispatchQueue.main.async {
                     completion(nil)
@@ -105,7 +101,7 @@ struct PlaceAPI {
             }
             
             // now we have the json dictionary array
-            var placeDetail: PlaceDetail? = detail(fromJSON: result, place: placeForDetails)
+            let placeDetail: PlaceDetail? = detail(fromJSON: result, place: placeForDetails)
             return placeDetail
         } catch {
             print("error getting JSON")
@@ -123,7 +119,7 @@ struct PlaceAPI {
         guard let description = reviews[0]["text"] as? String else {
             return nil
         }
-        var placeDetail = PlaceDetail(place: place, phoneNumber: phoneNumber, description: description)
+        let placeDetail = PlaceDetail(place: place, phoneNumber: phoneNumber, description: description)
         return placeDetail
     }
     
@@ -150,13 +146,13 @@ struct PlaceAPI {
     static func fetchPlaces(text: String, location: (latitude: Double, longitude: Double), completion: @escaping ([Place]?) -> Void) {
         let url = placeURL(text: text, location: location)
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let data = data, let dataString = String(data: data, encoding: .utf8), let places = places(fromData: data) {
+            if let data = data, let _ = String(data: data, encoding: .utf8), let places = places(fromData: data) {
                 DispatchQueue.main.async {
                     completion(places)
                 }
             } else {
                 if let error = error {
-                    print("error")
+                    print("error, \(error)")
                 }
                 DispatchQueue.main.async {
                     completion(nil)
