@@ -1,10 +1,4 @@
-//
-//  PlaceDetailViewController.swift
-//  Near Me
-//
-//  Created by Kevin Mattappally on 11/25/18.
-//  Copyright © 2018 Kevin Mattappally. All rights reserved.
-//
+// Kurt Lamon and Kevin Mattappally
 
 import UIKit
 
@@ -31,7 +25,12 @@ class PlaceDetailViewController: UIViewController {
             })
             nameAndOpenLabel.text = validPlace.name
             addressLabel.text = validPlace.vicinity
-            placeImage.image = UIImage(named: validPlace.photoReference)
+            PlaceAPI.fetchPhoto(photoReference: validPlace.photoReference, completion: {(image) in
+                if let photo: UIImage = image {
+                    self.placeImage.image = photo
+                }
+            })
+            
         }
         // Do any additional setup after loading the view.
     }

@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 struct PlaceAPI {
     static let apiKey: String = "AIzaSyDJgGQcEca-T1jl0dtxcqPLgkZTi_MAEtQ"
     static let baseURL: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
     static let baseDetailsURL: String = "https://maps.googleapis.com/maps/api/place/details/json?"
+    static let basePhotoURL: String = "https://maps.googleapis.com/maps/api/place/photo?"
+    
     
     static func detailURL(id: String) -> URL {
         // first lets define our query parameters
@@ -29,6 +32,49 @@ struct PlaceAPI {
         components.queryItems = queryItems
         let url = components.url!
         return url
+    }
+    
+    static func photoURL(photoReference: String) -> URL {
+        // first lets define our query parameters
+        let params: [String: String] = [
+            "key": PlaceAPI.apiKey,
+            "photoreference": photoReference,
+            "maxwidth": "300"
+            ]
+        
+        // now we need to get the params into a url with the base url
+        var queryItems = [URLQueryItem]()
+        for (key, value) in params {
+            queryItems.append(URLQueryItem(name: key, value: value))
+        }
+        var components = URLComponents(string: PlaceAPI.basePhotoURL)!
+        components.queryItems = queryItems
+        let url = components.url!
+        return url
+    }
+    
+    static func fetchPhoto(photoReference: String, completion: @escaping (UIImage?) -> Void) {
+        let url = photoURL(photoReference: photoReference)
+        print(url)
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data, let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            } else {
+                if let error = error {
+                    print("error details")
+                }
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    static func placePhoto() {
+        
     }
     
     static func fetchDetails(place: Place, completion: @escaping (PlaceDetail?) -> Void) {
@@ -86,7 +132,7 @@ struct PlaceAPI {
     static func placeURL(text: String, location: (latitude: Double, longitude: Double)) -> URL {
         // first lets define our query parameters
         let params: [String: String] = [
-            "query": text,
+            "keyword": text,
             "key": PlaceAPI.apiKey,
             "location": "\(location.latitude),\(location.longitude)",
             "radius": "5000"

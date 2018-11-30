@@ -1,15 +1,9 @@
-//
-//  ViewController.swift
-//  Near Me
-//
-//  Created by Kevin Mattappally on 11/25/18.
-//  Copyright © 2018 Kevin Mattappally. All rights reserved.
-//
+// Kurt Lamon and Kevin Mattappally
 
 import UIKit
 import CoreLocation
 
-class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UISearchBarDelegate {
     
     @IBOutlet var placeTableView: UITableView!
     var places = [Place]()
@@ -22,6 +16,21 @@ class PlaceTableViewController: UIViewController, UITableViewDelegate, UITableVi
             return places.count
         }
         return 0
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // TODO: Fill in completion closure
+        let text: String = searchBar.text!
+        print(text)
+        if text != "" {
+            PlaceAPI.fetchPlaces(text: text, location: (latitude: location.latitude, longitude: location.longitude), completion: { (placesOptional) in
+                if let placesArray = placesOptional {
+                    self.places = placesArray
+                }
+                self.placeTableView.reloadData()
+            })
+            print("update pressed")
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
