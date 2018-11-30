@@ -142,12 +142,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A00-sY-XuX">
+                                <rect key="frame" x="16" y="213" width="343" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="cBj-JK-Dp9" secondAttribute="trailing" constant="16" id="1NM-Qg-WB0"/>
                             <constraint firstItem="LFo-5H-857" firstAttribute="bottom" secondItem="tBT-Eh-dWG" secondAttribute="bottom" constant="16" id="2TJ-kc-sMT"/>
+                            <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="A00-sY-XuX" secondAttribute="trailing" constant="16" id="2vj-CF-6li"/>
                             <constraint firstItem="pyg-vZ-UDa" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="75P-8e-hKP"/>
+                            <constraint firstItem="A00-sY-XuX" firstAttribute="top" secondItem="pyg-vZ-UDa" secondAttribute="bottom" constant="16" id="7cT-DY-hx2"/>
+                            <constraint firstItem="A00-sY-XuX" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="EYd-Ih-M3g"/>
                             <constraint firstItem="LFo-5H-857" firstAttribute="trailing" secondItem="YoN-Km-pBZ" secondAttribute="trailing" constant="16" id="Eee-tz-RKi"/>
                             <constraint firstItem="xKD-R9-qk0" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="JoS-X7-go7"/>
                             <constraint firstItem="tBT-Eh-dWG" firstAttribute="leading" secondItem="LFo-5H-857" secondAttribute="leading" constant="16" id="K5U-y7-9Ey"/>
@@ -167,6 +176,7 @@
                         <outlet property="addressLabel" destination="cBj-JK-Dp9" id="jOd-QJ-Xy4"/>
                         <outlet property="descriptionLabel" destination="pyg-vZ-UDa" id="mPY-HU-YVi"/>
                         <outlet property="nameAndOpenLabel" destination="YoN-Km-pBZ" id="KBH-Kb-zph"/>
+                        <outlet property="openLabel" destination="A00-sY-XuX" id="M9N-3B-gfl"/>
                         <outlet property="phoneNumberLabel" destination="xKD-R9-qk0" id="bIk-cF-U8b"/>
                         <outlet property="placeImage" destination="tBT-Eh-dWG" id="POY-5Z-LMS"/>
                     </connections>

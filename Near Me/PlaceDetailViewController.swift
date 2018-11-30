@@ -15,6 +15,7 @@ class PlaceDetailViewController: UIViewController {
     @IBOutlet var phoneNumberLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var placeImage: UIImageView!
+    @IBOutlet var openLabel: UILabel!
     
     // sets up the images and labels of the detail view
     override func viewDidLoad() {
@@ -36,6 +37,14 @@ class PlaceDetailViewController: UIViewController {
                 }
             })
             
+        }
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        if hour > 20 || hour < 6{
+            openLabel.text = "Closed"
+        } else {
+            openLabel.text = "Open"
         }
         // Do any additional setup after loading the view.
     }

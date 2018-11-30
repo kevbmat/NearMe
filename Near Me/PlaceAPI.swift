@@ -51,6 +51,7 @@ struct PlaceAPI {
         return url
     }
     
+    // fetches the photo for the detailed view using the API
     static func fetchPhoto(photoReference: String, completion: @escaping (UIImage?) -> Void) {
         let url = photoURL(photoReference: photoReference)
         print(url)
@@ -71,6 +72,7 @@ struct PlaceAPI {
         task.resume()
     }
     
+    // fetches the details for the detailed view
     static func fetchDetails(place: Place, completion: @escaping (PlaceDetail?) -> Void) {
         let id = place.id
         let url = detailURL(id: id)
@@ -143,6 +145,7 @@ struct PlaceAPI {
         return url
     }
     
+    // fetches the places to be shown up on the table view
     static func fetchPlaces(text: String, location: (latitude: Double, longitude: Double), completion: @escaping ([Place]?) -> Void) {
         let url = placeURL(text: text, location: location)
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -185,6 +188,7 @@ struct PlaceAPI {
         return nil
     }
     
+    // gets each property for the place to be shown
     static func place(fromJSON json: [String: Any]) -> Place? {
         guard let id = json["place_id"] as? String else {
             return nil
